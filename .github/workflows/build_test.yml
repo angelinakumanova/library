@@ -25,5 +25,7 @@ jobs:
       run: npm audit
     - name: Run server
       run: node server/server.js &
+    - name: Install Playwright browsers
+      run: npx playwright install
     - name: Execute integration tests
       run: npm test
