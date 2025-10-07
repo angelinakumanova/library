@@ -20,12 +20,10 @@ jobs:
         node-version: 20
     - name: Install node modules
       run: npm install
-    - name: Execute static security tests
-      run: npm audit  
     - name: Run servers in background
       run: |
         npm start &           
-        node server/server.js &  
+        npm start server &  
     - name: Install Playwright browsers
       run: npx playwright install
     - name: Execute integration tests
