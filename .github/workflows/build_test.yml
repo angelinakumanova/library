@@ -23,7 +23,7 @@ jobs:
     - name: Run servers in background
       run: |
         npm start &           
-        npm start server &  
+        npm run server &  
     - name: Install Playwright browsers
       run: npx playwright install
     - name: Execute integration tests
