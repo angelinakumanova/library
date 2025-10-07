@@ -27,6 +27,6 @@ jobs:
         npm start &           
         node server/server.js &  
     - name: Install Playwright browsers
-      run: npm install playwright
+      run: npx playwright install
     - name: Execute integration tests
       run: npm test
