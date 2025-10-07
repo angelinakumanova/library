@@ -22,32 +22,12 @@ jobs:
     - name: Install node modules
       run: npm install
     - name: Execute static security tests
-      run: npm audit
-    - name: Install Playwright system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          libwoff1 \
-          libvpx7 \
-          libevent-2.1-7 \
-          libopus0 \
-          gstreamer1.0-plugins-base \
-          gstreamer1.0-plugins-good \
-          gstreamer1.0-plugins-bad \
-          gstreamer1.0-plugins-ugly \
-          gstreamer1.0-libav \
-          libharfbuzz-icu0 \
-          libsecret-1-0 \
-          libhyphen0 \
-          libmanette-0.2-0 \
-          flite \
-          libgles2-mesa \
-          libx264-160  
+      run: npm audit  
     - name: Run servers in background
       run: |
         npm start &           
         node server/server.js &  
     - name: Install Playwright browsers
-      run: npx playwright install
+      run: npm install playwright
     - name: Execute integration tests
       run: npm test
